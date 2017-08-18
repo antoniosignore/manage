@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+    <include resource="org/springframework/boot/logging/logback/base.xml"/>
+    <jmxConfigurator/>
+
+    <logger name="org.springframework" level="INFO"/>
+    <logger name="org.hibernate.type.descriptor.sql.BasicBinder" level="INFO"/>
+    <logger name="org.hibernate.SQL" level="INFO"/>
+    <logger name="org.springframework.security.oauth2.provider.endpoint" level="DEBUG"/>
+    <logger name="org.springframework.web.filter.CommonsRequestLoggingFilter" level="DEBUG"/>
+
+
+    <!--<property name="LOG_PATH" value="/var/log/thumbsup}"/>-->
+
+    <!--logging.level.org.springframework.web.filter.CommonsRequestLoggingFilter=DEBUG-->
+
+    <!--<logger name="org.springframework" level="TRACE" />-->
+    <!--<logger name="org.springframework.beans" level="WARN" />-->
+    <!--<logger-->
+    <!--name="org.springframework.web.servlet.mvc"-->
+    <!--level="TRACE" />-->
+
+    <appender name="STDOUT"
+              class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>
+                %d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n
+            </pattern>
+        </encoder>
+    </appender>
+
+
+    <!--<root level="DEBUG">-->
+    <!--<appender-ref ref="STDOUT" />-->
+    <!--</root>-->
+    <!--<appender name="stash" class="net.logstash.logback.appender.LogstashTcpSocketAppender">-->
+    <!--<destination>192.168.99.100:5000</destination>-->
+
+    <!--&lt;!&ndash; encoder is required &ndash;&gt;-->
+    <!--<encoder class="net.logstash.logback.encoder.LogstashEncoder"/>-->
+    <!--</appender>-->
+
+    <!--<root level="DEBUG">-->
+    <!--<appender-ref ref="stash"/>-->
+    <!--</root>-->
+
+</configuration>

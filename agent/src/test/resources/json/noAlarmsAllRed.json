@@ -1,0 +1,180 @@
+{
+  "name": "DC-M018-TDS",
+  "mmcAlarms": [],
+  "status": "gray",
+  "clusters": [
+    {
+      "name": "CL-MSSA910",
+      "mmcAlarms": [],
+      "status": "red",
+      "nodes": [
+        {
+          "name": "mssae911.ps-ssa.local",
+          "mmcAlarms": [],
+          "status": "red",
+          "inMaintenanceMode": false,
+          "vms": [
+            {
+              "name": "mpostfix990_1.0",
+              "mmcAlarms": [],
+              "status": "green",
+              "state": "poweredOn",
+              "category": ""
+            },
+            {
+              "name": "msmg990",
+              "mmcAlarms": [],
+              "status": "green",
+              "state": "poweredOn",
+              "category": ""
+            },
+            {
+              "name": "msplssysl901",
+              "mmcAlarms": [],
+              "status": "green",
+              "state": "poweredOn",
+              "category": ""
+            },
+            {
+              "name": "splunkbase",
+              "mmcAlarms": [],
+              "status": "green",
+              "state": "poweredOff",
+              "category": ""
+            },
+            {
+              "name": "miperf",
+              "mmcAlarms": [],
+              "status": "green",
+              "state": "poweredOn",
+              "category": ""
+            },
+            {
+              "name": "msds990",
+              "mmcAlarms": [],
+              "status": "green",
+              "state": "poweredOn",
+              "category": ""
+            },
+            {
+              "name": "mspldcn901",
+              "mmcAlarms": [],
+              "status": "green",
+              "state": "poweredOff",
+              "category": ""
+            },
+            {
+              "name": "mssav910",
+              "mmcAlarms": [],
+              "status": "green",
+              "state": "poweredOn",
+              "category": ""
+            },
+            {
+              "name": "NTNX-MSSA910-16SM35060015-A-CVM",
+              "mmcAlarms": [],
+              "status": "green",
+              "state": "poweredOn",
+              "category": ""
+            }
+          ],
+          "state": "poweredOn"
+        },
+        {
+          "name": "mssae912.ps-ssa.local",
+          "mmcAlarms": [],
+          "status": "red",
+          "inMaintenanceMode": false,
+          "vms": [
+            {
+              "name": "msplcanms901",
+              "mmcAlarms": [],
+              "status": "green",
+              "state": "poweredOn",
+              "category": ""
+            },
+            {
+              "name": "rfetsvs1_5.0",
+              "mmcAlarms": [],
+              "status": "green",
+              "state": "poweredOn",
+              "category": "yes"
+            },
+            {
+              "name": "rexstsv1_5.0",
+              "mmcAlarms": [],
+              "status": "green",
+              "state": "poweredOn",
+              "category": ""
+            },
+            {
+              "name": "mjump901",
+              "mmcAlarms": [],
+              "status": "green",
+              "state": "poweredOn",
+              "category": ""
+            },
+            {
+              "name": "rfetsvs1_5.1",
+              "mmcAlarms": [],
+              "status": "green",
+              "state": "poweredOff",
+              "category": ""
+            },
+            {
+              "name": "NTNX-MSSA910-16SM35060015-B-CVM",
+              "mmcAlarms": [],
+              "status": "green",
+              "state": "poweredOn",
+              "category": ""
+            }
+          ],
+          "state": "poweredOn"
+        },
+        {
+          "name": "mssae913.ps-ssa.local",
+          "mmcAlarms": [],
+          "status": "red",
+          "inMaintenanceMode": false,
+          "vms": [
+            {
+              "name": "NTNX-MSSA910-16SM35060007-A-CVM",
+              "mmcAlarms": [],
+              "status": "green",
+              "state": "poweredOn",
+              "category": ""
+            }
+          ],
+          "state": "poweredOn"
+        }
+      ]
+    }
+  ],
+  "datastores": [
+    {
+      "name": "repl_mssa920_cntr01",
+      "mmcAlarms": [],
+      "status": "green"
+    },
+    {
+      "name": "NTNX-local-ds-16SM35060015-A",
+      "mmcAlarms": [],
+      "status": "green"
+    },
+    {
+      "name": "NTNX-local-ds-16SM35060007-A",
+      "mmcAlarms": [],
+      "status": "green"
+    },
+    {
+      "name": "NTNX-local-ds-16SM35060015-B",
+      "mmcAlarms": [],
+      "status": "green"
+    },
+    {
+      "name": "mssa910_cntr01",
+      "mmcAlarms": [],
+      "status": "green"
+    }
+  ]
+}

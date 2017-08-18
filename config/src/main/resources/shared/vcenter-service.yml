@@ -1,0 +1,48 @@
+info:
+  build:
+    group: MUAC
+    name: vcenter-service
+    description: vcenter management service
+    version: 0.1
+
+management:
+  security:
+    enabled: false
+
+endpoints:
+  health:
+    sensitive: true
+
+server:
+  port: ${PORT:0}
+
+eureka:
+  enabled: true
+  instance:
+    instanceId: ${spring.application.name}:${random.value}
+    leaseRenewalIntervalInSeconds: 10
+    metadataMap:
+      instanceId: ${vcap.application.instance_id:${spring.application.name}:${spring.application.instance_id:${server.port}}}
+  client:
+    registryFetchIntervalSeconds: 5
+
+logging:
+  path: ./logs/vcenter
+  file: ./logs/vcenter/api.log
+
+liquibase:
+  enabled: false
+
+flyway:
+  enabled: false
+
+#vcenter:
+#  url: https://172.22.150.133/sdk/vimService
+#  user: MMC@mssav920.local
+#  password: Nutanix/4u
+
+vcenter:
+  url: https://172.22.150.132/sdk/vimService
+  user: MMC@mssav910.local
+  password: Nutanix/4u
+

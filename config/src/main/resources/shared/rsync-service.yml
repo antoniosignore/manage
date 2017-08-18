@@ -1,0 +1,41 @@
+build:
+    group: MUAC
+    name: rsync-service
+    description: RSYNC management service
+    version: 0.1
+
+management:
+  security:
+    enabled: false
+
+endpoints:
+  health:
+    sensitive: true
+
+server:
+    port: ${PORT:0}
+
+eureka:
+  instance:
+    instanceId: ${spring.application.name}:${random.value}
+    leaseRenewalIntervalInSeconds: 10
+    metadataMap:
+      instanceId: ${vcap.application.instance_id:${spring.application.name}:${spring.application.instance_id:${server.port}}}
+  client:
+    registryFetchIntervalSeconds: 5
+
+logging:
+  path: ./logs/rsync
+  file: ./logs/rsync/api.log
+
+liquibase:
+  enabled: false
+
+flyway:
+  enabled: false
+
+
+
+
+
+

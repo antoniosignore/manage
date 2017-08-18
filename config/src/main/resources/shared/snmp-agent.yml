@@ -1,0 +1,63 @@
+info:
+  build:
+    group: MUAC
+    name: snmp-service
+    description: SNMP management server
+    version: 0.1
+
+snmp:
+  agent:
+    host: 10.65.56.200
+    port: 21234
+    polling: 10000
+
+management:
+  security:
+    enabled: false
+
+endpoints:
+  health:
+    sensitive: true
+
+server:
+    port: 9000
+
+eureka:
+  instance:
+    leaseRenewalIntervalInSeconds: 10
+    metadataMap:
+      instanceId: ${vcap.application.instance_id:${spring.application.name}:${spring.application.instance_id:${server.port}}}
+  client:
+    registryFetchIntervalSeconds: 5
+
+logging:
+  path: ./logs/snmp
+  file: ./logs/snmp/api.log
+
+liquibase:
+  enabled: false
+
+flyway:
+  enabled: false
+
+vcenter:
+  folderService: http://vcenter-service/datacenter
+
+rsync:
+  service: http://rsync-service/mountpoints
+  box: FE
+
+agent.name: MMCLocalAgentX
+
+
+agentX:
+  masterAddress: localhost/705
+  pingDelay: 30
+  timeout: 5
+  reconnectTimeout: 5
+  reconnectAttempts: -1
+
+threshold:
+  minor: 30
+  major: 60
+

@@ -1,0 +1,32 @@
+{
+  "mmcMountPoints": [
+    {
+      "name": "rexstsv1",
+      "hostname": "pippo",
+      "mmcAlarms": [],
+      "status": null,
+      "percent": 40.0
+    },
+    {
+      "name": "tss",
+      "hostname": "pippo",
+      "mmcAlarms": [],
+      "status": null,
+      "percent": 70.0
+    },
+    {
+      "name": "lsrat",
+      "hostname": "pippo",
+      "mmcAlarms": [],
+      "status": null,
+      "percent": 20.0
+    },
+    {
+      "name": "rfestsv1",
+      "hostname": "pippo",
+      "mmcAlarms": [],
+      "status": null,
+      "percent": 20.0
+    }
+  ]
+}

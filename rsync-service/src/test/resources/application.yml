@@ -1,0 +1,141 @@
+---
+- Instance: SEC.VCS
+  FE:
+        Hostname: rfestsv1
+        Ip: 172.22.152.2
+        Ip-OBM: 172.22.157.30
+        Gw: na
+        Routes:
+                1: 193.221.234.0 172.22.152.1 255.255.255.0
+                2: 10.203.0.0 172.22.152.254 255.255.0.0
+                3: 172.22.2.0 172.22.152.1 255.255.255.0
+        Routes-OBM:
+                1: 172.22.150.0 172.22.157.1 255.255.255.0
+        Timeservers: 172.22.150.66,172.22.150.67
+        Hosts-Entries:
+                1: 172.22.150.98 msmg990.muac.corp.eurocontrol.int msmg990
+                2: 172.22.150.50 soc
+        Services: ntpd,xinetd
+        Remove-Disks: na
+        Rsync_fetch: na
+        Rsync_export: na
+        RLI-Config:
+            rfestsv1:
+                Disksize: 10
+                Roundtime: na
+                Rsync: yes
+                Samba: no
+                Nfs: no
+                Rsyncd_tag: rfestsv1
+            rexstsv1:
+                Disksize: 10
+                Roundtime: na
+                Rsync: yes
+                Samba: no
+                Nfs: no
+                Rsyncd_tag: rexstsv1
+            lsrat:
+                Disksize: 15
+                Roundtime: na
+                Rsync: yes
+                Samba: no
+                Nfs: no
+                Rsyncd_tag: lsrat
+            tss:
+                Disksize: 10
+                Roundtime: na
+                Rsync: yes
+                Samba: no
+                Nfs: no
+                Rsyncd_tag: data_from_gentss
+  EX:
+        Hostname: rexstsv1
+        Ip: 172.22.152.3
+        Ip-OBM: 172.22.157.31
+        Gw: na
+        Routes:
+                1: 193.221.234.0 172.22.152.1 255.255.255.0
+                2: 10.203.0.0 172.22.152.254 255.255.0.0
+        Routes-OBM:
+                1: 172.22.150.0 172.22.157.1 255.255.255.0
+        Timeservers: 172.22.150.66,172.22.150.67
+        Hosts-Entries:
+                1: 172.22.150.98 msmg990.muac.corp.eurocontrol.int msmg990
+                2: 172.22.150.50 soc
+                3: 172.22.152.2  fe
+        Services: ntpd,xinetd,list-files
+        Remove-Disks: na
+        Rsync_fetch: na
+        Rsync_export: yes
+        RLI-Config:
+            rexstsv1:
+                Disksize: 10
+                Roundtime: 5
+                Rsync: no
+                Samba: no
+                Nfs: no
+                Rsyncd_tag: na
+                Rsync_to_tag: rexstsv1
+            trs:
+                Disksize: 100
+                Roundtime: na
+                Rsync: yes
+                Samba: no
+                Nfs: no
+                Rsyncd_tag: trs.tsv
+                Rsync_to_tag: na
+                Additional_rsyncd_tags:
+                    1: gentss-sec-vcs-tds TSS
+  SUP:
+        Hostname: rextsvs1
+        Ip: 172.22.2.204
+        Ip-OBM: na
+        Gw: 172.22.2.103
+        Routes:
+                1: 172.22.159.0 172.22.2.103 255.255.255.0
+        Routes-OBM: na
+        Timeservers: 193.221.242.84
+        Hosts-Entries:
+                1: 172.22.246.12  msmg010.muac.corp.eurocontrol.int msmg010
+                2: 172.22.159.248 fe
+        Services: ntpd,smb,nfs-server
+        Remove-Disks: na
+        Rsync_fetch: yes
+        Rsync_export: na
+        RLI-Config:
+            rextsvs1:
+                Disksize: 10
+                Roundtime: na
+                Rsync: no
+                Samba: yes
+                Nfs: yes
+                Rsync_from_tag: rextsvs1
+            rfestsv1:
+                Disksize: 10
+                Roundtime: 5
+                Rsync: no
+                Samba: yes
+                Nfs: yes
+                Rsync_from_tag: rfestsv1
+            rexstsv1:
+                Disksize: 10
+                Roundtime: 5
+                Rsync: no
+                Samba: yes
+                Nfs: yes
+                Rsync_from_tag: rexstsv1
+            lsrat:
+                Disksize: 15
+                Roundtime: 5
+                Rsync: no
+                Samba: yes
+                Nfs: yes
+                Rsync_from_tag: lsrat
+            tss:
+                Disksize: 10
+                Roundtime: 5
+                Rsync: no
+                Samba: yes
+                Nfs: yes
+                Rsync_from_tag: data_from_gentss
+

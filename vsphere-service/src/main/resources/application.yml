@@ -1,0 +1,47 @@
+spring:
+    application:
+        name: vsphere-service
+
+info:
+  build:
+    group: MUAC
+    name: vsphere-service
+    description: vcenter management service
+    version: 0.1
+
+management:
+  security:
+    enabled: false
+
+endpoints:
+  health:
+    sensitive: true
+
+server:
+  port: 9999
+  #port: ${PORT:0}
+
+eureka:
+  instance:
+    instanceId: ${spring.application.name}:${random.value}
+    leaseRenewalIntervalInSeconds: 10
+    metadataMap:
+      instanceId: ${vcap.application.instance_id:${spring.application.name}:${spring.application.instance_id:${server.port}}}
+  client:
+    registryFetchIntervalSeconds: 5
+
+logging:
+  path: ./logs/vsphere
+  file: ./logs/vsphere/api.log
+
+liquibase:
+  enabled: false
+
+flyway:
+  enabled: false
+
+vcenter:
+  host: 172.22.160.1
+  user: administrator@splunk01.local
+  password: Nutanix/4u
+
